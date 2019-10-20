@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hadialaoui.microservices.employeesservice.entities.Employee;
+import com.hadialaoui.microservices.employeesservice.exposition.externalService.TrainingCoursesServiceProxy;
+import com.hadialaoui.microservices.employeesservice.models.TrainingCours;
 import com.hadialaoui.microservices.employeesservice.services.EmployeeService;
 
 @RequestMapping("/employees")
@@ -23,6 +25,8 @@ public class EmployeesController {
 	Environment environment;
 	@Autowired
 	private EmployeeService employeeService;
+	@Autowired
+	private  TrainingCoursesServiceProxy coursesServiceProxy;
 	
 	
 	@PostMapping(value="")
@@ -54,6 +58,11 @@ public class EmployeesController {
 	@DeleteMapping(value="/{employeeRefog}")
 	public void deleteEmployee(@PathVariable String employeeRefog){
 		 employeeService.deleteEmployee(employeeRefog);
+	}
+	
+	@GetMapping(value="/traingingCourses")
+	public List<TrainingCours> getAllTraingingCourses(){
+		return coursesServiceProxy.getAllTrainingCours();
 	}
 	
 }
