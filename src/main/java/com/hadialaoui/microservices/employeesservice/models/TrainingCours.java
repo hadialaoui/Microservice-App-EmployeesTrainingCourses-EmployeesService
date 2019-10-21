@@ -4,7 +4,7 @@ public class TrainingCours {
    private Long id;
    private String Title;
    private String descreption;
-   private double numberOfHours;
+   private String numberOfHours;
    private String topics;
    
    
@@ -12,7 +12,7 @@ public class TrainingCours {
 	super();
 	}
 
-	public TrainingCours(String title, String descreption, double numberOfHours, String topics) {
+	public TrainingCours(String title, String descreption, String numberOfHours, String topics) {
 	super();
 	Title = title;
 	this.descreption = descreption;
@@ -38,10 +38,10 @@ public class TrainingCours {
 	public void setDescreption(String descreption) {
 		this.descreption = descreption;
 	}
-	public double getNumberOfHours() {
+	public String getNumberOfHours() {
 		return numberOfHours;
 	}
-	public void setNumberOfHours(double numberOfHours) {
+	public void setNumberOfHours(String numberOfHours) {
 		this.numberOfHours = numberOfHours;
 	}
 	public String getTopics() {
