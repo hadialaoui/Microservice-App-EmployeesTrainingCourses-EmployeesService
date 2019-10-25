@@ -64,5 +64,9 @@ public class EmployeesController {
 	public List<TrainingCours> getAllTraingingCourses(){
 		return coursesServiceProxy.getAllTrainingCours();
 	}
+	@GetMapping(value="/traingingCourses/port")
+	public String getPortTraingingCourses(){
+		return coursesServiceProxy.getPort();
+	}
 	
 }
